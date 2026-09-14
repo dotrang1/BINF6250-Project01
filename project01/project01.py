@@ -41,9 +41,9 @@ def parse_line(line):
     if af_exac < 0.0001:
         # Associated diseases in CLNDN:
         if 'CLNDN' in info_dict:
-            #ToDo: 1. Split the diseases into list, they are pipe (|) separated
+            # Split the diseases into list, they are pipe (|) separated
             disease_list = info_dict['CLNDN'].split('|')
-            #Todo: 2. Loop though the above list and filter out invalid disease names,
+            # Loop though the above list and filter out invalid disease names,
             # append the valid ones.
             valid_diseases = []
             for disease in disease_list:
@@ -66,7 +66,7 @@ def read_file(file_name):
         for line in vcf_file:
             diseases_found = parse_line(line)
 
-            #ToDo 4: Loop though 'disease_found', if a disease is already in 'disease_counts', add 1.
+            # Loop though 'disease_found', if a disease is already in 'disease_counts', add 1.
             # if not, set it to 1
             for disease in diseases_found:
                 if disease in disease_counts:
